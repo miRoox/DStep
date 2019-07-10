@@ -2640,6 +2640,1034 @@ Notebook[
        },
        Open
       ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["\:6da6\:8272\:5916\:89c2", "Section"],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "d",
+            "/:",
+            RowBox[
+             {
+              "MakeBoxes",
+              "[",
+              RowBox[
+               {
+                RowBox[{"d", "[", RowBox[{"f_", ",", "x_"}], "]"}],
+                ",",
+                "TraditionalForm"
+               }
+              ],
+              "]"
+             }
+            ],
+            ":=",
+            RowBox[
+             {
+              "Module",
+              "[",
+              RowBox[
+               {
+                RowBox[{"{", "boxes", "}"}],
+                ",",
+                "\n",
+                "  ",
+                RowBox[
+                 {
+                  RowBox[
+                   {
+                    "boxes",
+                    "=",
+                    RowBox[
+                     {
+                      "MakeBoxes",
+                      "[",
+                      RowBox[{"f", ",", " ", "TraditionalForm"}],
+                      "]"
+                     }
+                    ]
+                   }
+                  ],
+                  ";",
+                  "\n",
+                  "  ",
+                  RowBox[
+                   {
+                    "If",
+                    "[",
+                    RowBox[
+                     {
+                      RowBox[
+                       {
+                        RowBox[{"Precedence", "[", "Plus", "]"}],
+                        ">=",
+                        RowBox[
+                         {
+                          "Precedence",
+                          "[",
+                          RowBox[{"boxes", ",", "TraditionalForm"}],
+                          "]"
+                         }
+                        ]
+                       }
+                      ],
+                      ",",
+                      RowBox[
+                       {
+                        "boxes",
+                        "=",
+                        RowBox[
+                         {
+                          "RowBox",
+                          "[",
+                          RowBox[
+                           {
+                            "{",
+                            RowBox[{"\"(\"", ",", " ", "boxes", ",", " ", "\")\""}],
+                            "}"
+                           }
+                          ],
+                          "]"
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ],
+                    "]"
+                   }
+                  ],
+                  ";",
+                  "\n",
+                  "  ",
+                  RowBox[
+                   {
+                    "RowBox",
+                    "[",
+                    RowBox[
+                     {
+                      "{",
+                      RowBox[
+                       {
+                        RowBox[
+                         {
+                          "FractionBox",
+                          "[",
+                          RowBox[
+                           {
+                            "\"\[DifferentialD]\"",
+                            ",",
+                            " ",
+                            RowBox[
+                             {
+                              "RowBox",
+                              "[",
+                              RowBox[
+                               {
+                                "{",
+                                RowBox[
+                                 {
+                                  "\"\[DifferentialD]\"",
+                                  ",",
+                                  " ",
+                                  RowBox[
+                                   {
+                                    "MakeBoxes",
+                                    "[",
+                                    RowBox[{"x", ",", " ", "TraditionalForm"}],
+                                    "]"
+                                   }
+                                  ]
+                                 }
+                                ],
+                                "}"
+                               }
+                              ],
+                              "]"
+                             }
+                            ]
+                           }
+                          ],
+                          "]"
+                         }
+                        ],
+                        ",",
+                        " ",
+                        "boxes"
+                       }
+                      ],
+                      "}"
+                     }
+                    ],
+                    "]"
+                   }
+                  ]
+                 }
+                ]
+               }
+              ],
+              "\n",
+              "]"
+             }
+            ]
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[17]:="
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "dfunc",
+            "/:",
+            RowBox[
+             {
+              "MakeBoxes",
+              "[",
+              RowBox[
+               {
+                RowBox[{"dfunc", "[", RowBox[{"f_", ",", " ", "g_"}], "]"}],
+                ",",
+                " ",
+                "TraditionalForm"
+               }
+              ],
+              "]"
+             }
+            ],
+            ":=",
+            RowBox[
+             {
+              "Module",
+              "[",
+              RowBox[
+               {
+                RowBox[{"{", RowBox[{"fboxes", ",", " ", "gboxes"}], "}"}],
+                ",",
+                "\n",
+                "  ",
+                RowBox[
+                 {
+                  RowBox[
+                   {
+                    "fboxes",
+                    "=",
+                    RowBox[
+                     {
+                      "ToBoxes",
+                      "[",
+                      RowBox[
+                       {RowBox[{"f", "[", "g", "]"}], ",", " ", "TraditionalForm"}
+                      ],
+                      "]"
+                     }
+                    ]
+                   }
+                  ],
+                  ";",
+                  " ",
+                  RowBox[
+                   {
+                    "gboxes",
+                    "=",
+                    RowBox[
+                     {
+                      "ToBoxes",
+                      "[",
+                      RowBox[{"g", ",", " ", "TraditionalForm"}],
+                      "]"
+                     }
+                    ]
+                   }
+                  ],
+                  ";",
+                  "\n",
+                  "  ",
+                  RowBox[
+                   {
+                    "If",
+                    "[",
+                    RowBox[
+                     {
+                      RowBox[
+                       {
+                        RowBox[{"Precedence", "[", "Plus", "]"}],
+                        ">=",
+                        RowBox[
+                         {
+                          "Precedence",
+                          "[",
+                          RowBox[{"fboxes", ",", " ", "TraditionalForm"}],
+                          "]"
+                         }
+                        ]
+                       }
+                      ],
+                      ",",
+                      RowBox[
+                       {
+                        "fboxes",
+                        "=",
+                        RowBox[
+                         {
+                          "RowBox",
+                          "[",
+                          RowBox[
+                           {
+                            "{",
+                            RowBox[{"\"(\"", ",", " ", "fboxes", ",", " ", "\")\""}],
+                            "}"
+                           }
+                          ],
+                          "]"
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ],
+                    "]"
+                   }
+                  ],
+                  ";",
+                  "\n",
+                  "  ",
+                  RowBox[
+                   {
+                    "If",
+                    "[",
+                    RowBox[
+                     {
+                      RowBox[
+                       {
+                        RowBox[{"Precedence", "[", "Plus", "]"}],
+                        ">=",
+                        RowBox[
+                         {
+                          "Precedence",
+                          "[",
+                          RowBox[{"gboxes", ",", " ", "TraditionalForm"}],
+                          "]"
+                         }
+                        ]
+                       }
+                      ],
+                      ",",
+                      RowBox[
+                       {
+                        "gboxes",
+                        "=",
+                        RowBox[
+                         {
+                          "RowBox",
+                          "[",
+                          RowBox[
+                           {
+                            "{",
+                            RowBox[{"\"(\"", ",", " ", "gboxes", ",", " ", "\")\""}],
+                            "}"
+                           }
+                          ],
+                          "]"
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ],
+                    "]"
+                   }
+                  ],
+                  ";",
+                  "\n",
+                  "  ",
+                  RowBox[
+                   {
+                    "FractionBox",
+                    "[",
+                    RowBox[
+                     {
+                      RowBox[
+                       {
+                        "RowBox",
+                        "[",
+                        RowBox[
+                         {
+                          "{",
+                          RowBox[{"\"\[DifferentialD]\"", ",", " ", "fboxes"}],
+                          "}"
+                         }
+                        ],
+                        "]"
+                       }
+                      ],
+                      ",",
+                      " ",
+                      RowBox[
+                       {
+                        "RowBox",
+                        "[",
+                        RowBox[
+                         {
+                          "{",
+                          RowBox[{"\"\[DifferentialD]\"", ",", " ", "gboxes"}],
+                          "}"
+                         }
+                        ],
+                        "]"
+                       }
+                      ]
+                     }
+                    ],
+                    "]"
+                   }
+                  ]
+                 }
+                ]
+               }
+              ],
+              "\n",
+              "]"
+             }
+            ]
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[18]:="
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            RowBox[{"makeXForm", "[", "sym_Symbol", "]"}],
+            ":=",
+            RowBox[
+             {
+              "sym",
+              "/:",
+              RowBox[
+               {
+                "MakeBoxes",
+                "[",
+                RowBox[{"sym", ",", "TraditionalForm"}],
+                "]"
+               }
+              ],
+              "=",
+              RowBox[
+               {
+                "ToBoxes",
+                "[",
+                RowBox[
+                 {
+                  RowBox[
+                   {
+                    "Symbol",
+                    "[",
+                    RowBox[
+                     {
+                      "StringPart",
+                      "[",
+                      RowBox[
+                       {
+                        RowBox[
+                         {"ToString", "[", RowBox[{"sym", ",", "InputForm"}], "]"}
+                        ],
+                        ",",
+                        "1"
+                       }
+                      ],
+                      "]"
+                     }
+                    ],
+                    "]"
+                   }
+                  ],
+                  ",",
+                  "TraditionalForm"
+                 }
+                ],
+                "]"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[19]:="
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            RowBox[
+             {
+              "substRules",
+              "=",
+              RowBox[
+               {
+                RowBox[{"dfunc", "[", RowBox[{"f_", ",", "g_"}], "]"}],
+                "\[RuleDelayed]",
+                RowBox[
+                 {
+                  "Module",
+                  "[",
+                  RowBox[
+                   {
+                    RowBox[{"{", "u", "}"}],
+                    ",",
+                    RowBox[
+                     {
+                      "With",
+                      "[",
+                      RowBox[
+                       {
+                        RowBox[
+                         {
+                          "{",
+                          RowBox[
+                           {
+                            "df",
+                            "=",
+                            RowBox[
+                             {
+                              "(",
+                              RowBox[
+                               {
+                                RowBox[{"makeXForm", "[", "u", "]"}],
+                                ";",
+                                RowBox[
+                                 {
+                                  "dEval",
+                                  "[",
+                                  RowBox[{RowBox[{"f", "[", "u", "]"}], ",", "u"}],
+                                  "]"
+                                 }
+                                ]
+                               }
+                              ],
+                              ")"
+                             }
+                            ]
+                           }
+                          ],
+                          "}"
+                         }
+                        ],
+                        ",",
+                        RowBox[
+                         {
+                          RowBox[
+                           {
+                            "(",
+                            RowBox[
+                             {
+                              "df",
+                              "/.",
+                              RowBox[{"{", RowBox[{"u", "\[Rule]", "g"}], "}"}]
+                             }
+                            ],
+                            ")"
+                           }
+                          ],
+                          "/;",
+                          RowBox[
+                           {
+                            "FreeQ",
+                            "[",
+                            RowBox[{"df", ",", RowBox[{"_d", "|", "_dfunc"}]}],
+                            "]"
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      ],
+                      "]"
+                     }
+                    ]
+                   }
+                  ],
+                  "]"
+                 }
+                ]
+               }
+              ]
+             }
+            ],
+            ";"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[20]:="
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               RowBox[
+                {
+                 RowBox[{"(", RowBox[{"stepD", "\[Equal]", "D"}], ")"}],
+                 "[",
+                 RowBox[
+                  {
+                   RowBox[
+                    {
+                     "Log",
+                     "[",
+                     RowBox[
+                      {
+                       "Sec",
+                       "[",
+                       RowBox[{RowBox[{"3", "^", "x"}], "-", "1"}],
+                       "]"
+                      }
+                     ],
+                     "]"
+                    }
+                   ],
+                   ",",
+                   "x"
+                  }
+                 ],
+                 "]"
+                }
+               ],
+               "//",
+               "Through"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[22]:="
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    FractionBox[
+                     "\[DifferentialD]",
+                     RowBox[{"\[DifferentialD]", "x"}]
+                    ],
+                    RowBox[
+                     {
+                      "log",
+                      "(",
+                      RowBox[
+                       {
+                        "sec",
+                        "(",
+                        RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                        ")"
+                       }
+                      ],
+                      ")"
+                     }
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "(",
+                      RowBox[
+                       {
+                        FractionBox[
+                         "\[DifferentialD]",
+                         RowBox[{"\[DifferentialD]", "x"}]
+                        ],
+                        RowBox[
+                         {
+                          "sec",
+                          "(",
+                          RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                          ")"
+                         }
+                        ]
+                       }
+                      ],
+                      ")"
+                     }
+                    ],
+                    " ",
+                    FractionBox[
+                     RowBox[
+                      {
+                       "\[DifferentialD]",
+                       FormBox[
+                        RowBox[
+                         {
+                          "log",
+                          "(",
+                          RowBox[
+                           {
+                            "sec",
+                            "(",
+                            RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                            ")"
+                           }
+                          ],
+                          ")"
+                         }
+                        ],
+                        TraditionalForm
+                       ]
+                      }
+                     ],
+                     RowBox[
+                      {
+                       "\[DifferentialD]",
+                       FormBox[
+                        RowBox[
+                         {
+                          "sec",
+                          "(",
+                          RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                          ")"
+                         }
+                        ],
+                        TraditionalForm
+                       ]
+                      }
+                     ]
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    FractionBox[
+                     "\[DifferentialD]",
+                     RowBox[{"\[DifferentialD]", FormBox["u", TraditionalForm]}]
+                    ],
+                    RowBox[{"log", "(", FormBox["u", TraditionalForm], ")"}]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  FractionBox["1", FormBox["u", TraditionalForm]],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{40 + Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "(",
+                      RowBox[
+                       {
+                        FractionBox[
+                         "\[DifferentialD]",
+                         RowBox[{"\[DifferentialD]", "x"}]
+                        ],
+                        RowBox[
+                         {"(", RowBox[{"1", "-", SuperscriptBox["3", "x"]}], ")"}
+                        ]
+                       }
+                      ],
+                      ")"
+                     }
+                    ],
+                    " ",
+                    RowBox[
+                     {
+                      "cos",
+                      "(",
+                      RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                      ")"
+                     }
+                    ],
+                    " ",
+                    FractionBox[
+                     RowBox[
+                      {
+                       "\[DifferentialD]",
+                       FormBox[
+                        RowBox[
+                         {
+                          "sec",
+                          "(",
+                          RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                          ")"
+                         }
+                        ],
+                        TraditionalForm
+                       ]
+                      }
+                     ],
+                     RowBox[
+                      {
+                       "\[DifferentialD]",
+                       RowBox[
+                        {
+                         "(",
+                         FormBox[
+                          RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                          TraditionalForm
+                         ],
+                         ")"
+                        }
+                       ]
+                      }
+                     ]
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    FractionBox[
+                     "\[DifferentialD]",
+                     RowBox[{"\[DifferentialD]", FormBox["u", TraditionalForm]}]
+                    ],
+                    RowBox[{"sec", "(", FormBox["u", TraditionalForm], ")"}]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[{"tan", "(", FormBox["u", TraditionalForm], ")"}],
+                    " ",
+                    RowBox[{"sec", "(", FormBox["u", TraditionalForm], ")"}]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{40 + Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "(",
+                      RowBox[
+                       {
+                        RowBox[
+                         {
+                          FractionBox[
+                           "\[DifferentialD]",
+                           RowBox[{"\[DifferentialD]", "x"}]
+                          ],
+                          "1"
+                         }
+                        ],
+                        "+",
+                        RowBox[
+                         {
+                          FractionBox[
+                           "\[DifferentialD]",
+                           RowBox[{"\[DifferentialD]", "x"}]
+                          ],
+                          RowBox[{"-", SuperscriptBox["3", "x"]}]
+                         }
+                        ]
+                       }
+                      ],
+                      ")"
+                     }
+                    ],
+                    " ",
+                    RowBox[
+                     {
+                      "tan",
+                      "(",
+                      RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                      ")"
+                     }
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "-",
+                      RowBox[
+                       {
+                        "(",
+                        RowBox[
+                         {
+                          FractionBox[
+                           "\[DifferentialD]",
+                           RowBox[{"\[DifferentialD]", "x"}]
+                          ],
+                          SuperscriptBox["3", "x"]
+                         }
+                        ],
+                        ")"
+                       }
+                      ]
+                     }
+                    ],
+                    " ",
+                    RowBox[
+                     {
+                      "tan",
+                      "(",
+                      RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                      ")"
+                     }
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}}
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[{"-", SuperscriptBox["3", "x"]}],
+                    " ",
+                    RowBox[{"log", "(", "3", ")"}],
+                    " ",
+                    RowBox[
+                     {
+                      "tan",
+                      "(",
+                      RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                      ")"
+                     }
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}}
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[BoxData["True"], "Output", CellLabel -> "Out[22]="]
+          },
+          Open
+         ]
+        ]
+       },
+       Open
+      ]
      ]
     },
     Open
