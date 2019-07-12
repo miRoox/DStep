@@ -3,6 +3,9 @@
 BeginPackage["DStep`"]
 
 
+StepD::usage="StepD[f,x] gives the partial derivative \!\(\*FormBox[\(\[PartialD]f/\[PartialD]x\),TraditionalForm]\) step by step. "
+
+
 Begin["`Private`"]
 
 
@@ -105,7 +108,7 @@ echoStep[expr_]:=(
 
 dEval[f_,x_]:=Block[{$dDepth=$dDepth+1},dEvalR[f,x]]
 dEvalR[f_,x_]:=NestWhile[removeLabels@*echoStep@*ReplaceAll[allRules],removeLabels@echoStep0[d[f,x]],!FreeQ[#2,_d|_dfunc]&&UnsameQ[##]&,2]
-stepD[f_,x_]:=With[{eval=dEval[f,x]},eval/;FreeQ[eval,_d|_dfunc]]
+StepD[f_,x_]:=With[{eval=dEval[f,x]},eval/;FreeQ[eval,_d|_dfunc]]
 
 
 End[]
