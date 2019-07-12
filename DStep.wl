@@ -22,22 +22,23 @@ makeXForm[sym_Symbol]:=sym/:MakeBoxes[sym,TraditionalForm]=ToBoxes[Symbol[String
 
 
 baseRules={
-  d[c_,x_]/;FreeQ[c,x]:>0,
-  d[lf_Plus,x_]:>Thread[d[lf,x],Plus],
-  d[c_*f_,x_]/;FreeQ[c,x]:>c*d[f,x],
-  d[f_*g_,x_]:>d[f,x]g+d[g,x]f
+  d[c_,x_]/;FreeQ[c,x]:>dLabeled[0,"Constant Rule"],
+  d[lf_Plus,x_]:>dLabeled[Thread[d[lf,x],Plus],"Linearity Rule"],
+  d[c_*f_,x_]/;FreeQ[c,x]:>dLabeled[c*d[f,x],"Linearity Rule"],
+  d[f_*g_,x_]:>dLabeled[d[f,x]g+d[g,x]f,"Product Rule"]
 };
 
 higherRules={
-  HoldPattern@d[InverseFunction[f_][x_],x_]:>1/dfunc[f,InverseFunction[f][x]],
-  d[f_[g_],x_]/;g=!=x:>dfunc[f,g]d[g,x],
-  d[f_[g_,c_],x_]/;FreeQ[c,x]&&g=!=x:>dfunc[f[#,c]&,g]d[g,x],
-  d[f_[c_,g_],x_]/;FreeQ[c,x]&&g=!=x:>dfunc[f[c,#]&,g]d[g,x]
+  HoldPattern@d[InverseFunction[f_][x_],x_]:>dLabeled[1/dfunc[f,InverseFunction[f][x]],"Inverse Function Rule"],
+  d[f_[g_],x_]/;g=!=x:>dLabeled[dfunc[f,g]d[g,x],"Chain Rule"],
+  d[f_[g_,c_],x_]/;FreeQ[c,x]&&g=!=x:>dLabeled[dfunc[f[#,c]&,g]d[g,x],"Chain Rule"],
+  d[f_[c_,g_],x_]/;FreeQ[c,x]&&g=!=x:>dLabeled[dfunc[f[c,#]&,g]d[g,x],"Chain Rule"]
 };
 
 substRules=dfunc[f_,g_]:>Module[{u},
   makeXForm[u];
-  With[{df=dEval[f[u],u]},
+  With[
+    {df=dEval[dLabeled[f[u],Row@{"where ",TraditionalForm[u==g]}],u]},
     (df/.{u->g})/;FreeQ[df,_d|_dfunc]
   ]
 ];
@@ -66,24 +67,35 @@ transferRules={
 };
 
 
+getLabels[expr_]:=With[
+  {lbs=DeleteDuplicates@Cases[expr,dLabeled[_,lb_]:>lb,{0,Infinity}]},
+  Row@Flatten@{"(",Riffle[lbs,"; "],")"}/;lbs=!={}
+]
+getLabels[_]="";
+
+removeLabels[expr_]:=expr/.{dLabeled[e_,_]:>e}
+
+
 $dDepth=0;
 
 echoStep0[expr_]:=(
-  CellPrint@Cell[BoxData[FormBox[ToBoxes[expr,TraditionalForm],TraditionalForm]],"Print",
-    CellMargins->{{Inherited+20($dDepth-1), Inherited},{Inherited,Inherited}}];
+  CellPrint@Cell[BoxData[FormBox[ToBoxes[removeLabels@expr,TraditionalForm],TraditionalForm]],"Print",
+    CellMargins->{{Inherited+20($dDepth-1), Inherited},{Inherited,Inherited}},
+    CellFrameLabels->{{None,Cell[BoxData@ToBoxes@getLabels[expr],"MessageText"]},{None,None}}];
   expr
 )
 
 echoStep[expr_]:=(
-  CellPrint@Cell[BoxData[FormBox[ToBoxes[expr,TraditionalForm],TraditionalForm]],"Print",
+  CellPrint@Cell[BoxData[FormBox[ToBoxes[removeLabels@expr,TraditionalForm],TraditionalForm]],"Print",
     CellDingbat->Cell["=","EchoLabel"],
-    CellMargins->{{Inherited+20$dDepth, Inherited},{Inherited,Inherited}}];
+    CellMargins->{{Inherited+20$dDepth, Inherited},{Inherited,Inherited}},
+    CellFrameLabels->{{None,Cell[BoxData@ToBoxes@getLabels[expr],"MessageText"]},{None,None}}];
   expr
 )
 
 
 dEval[f_,x_]:=Block[{$dDepth=$dDepth+1},dEvalR[f,x]]
-dEvalR[f_,x_]:=NestWhile[echoStep@*ReplaceAll[allRules],echoStep0[d[f,x]],!FreeQ[#2,_d|_dfunc]&&UnsameQ[##]&,2]
+dEvalR[f_,x_]:=NestWhile[removeLabels@*echoStep@*ReplaceAll[allRules],removeLabels@echoStep0[d[f,x]],!FreeQ[#2,_d|_dfunc]&&UnsameQ[##]&,2]
 stepD[f_,x_]:=With[{eval=dEval[f,x]},eval/;FreeQ[eval,_d|_dfunc]]
 
 
