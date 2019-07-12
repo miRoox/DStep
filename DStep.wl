@@ -66,6 +66,15 @@ transferRules={
   HoldPattern@d[IgnoringInactive@Log[f_,g_],x_]:>d[Log[g]/Log[f],x]
 };
 
+allRules=Flatten@{
+  transferRules,
+  baseRules,
+  functionRules,
+  functionExtRules,
+  substRules,
+  higherRules
+};
+
 
 getLabels[expr_]:=With[
   {lbs=DeleteDuplicates@Cases[expr,dLabeled[_,lb_]:>lb,{0,Infinity}]},
