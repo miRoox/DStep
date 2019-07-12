@@ -50,7 +50,25 @@ transferRules={
 };
 
 
-dEval[f_,x_]:=d[f,x]//.allRules
+$dDepth=0;
+
+echoStep0[expr_]:=(
+  CellPrint@Cell[BoxData[FormBox[ToBoxes[expr,TraditionalForm],TraditionalForm]],"Print",
+    CellMargins->{{Inherited+20($dDepth-1), Inherited},{Inherited,Inherited}}];
+  expr
+)
+
+echoStep[expr_]:=(
+  CellPrint@Cell[BoxData[FormBox[ToBoxes[expr,TraditionalForm],TraditionalForm]],"Print",
+    CellDingbat->Cell["=","EchoLabel"],
+    CellMargins->{{Inherited+20$dDepth, Inherited},{Inherited,Inherited}}];
+  expr
+)
+
+
+dEval[f_,x_]:=Block[{$dDepth=$dDepth+1},dEvalR[f,x]]
+dEvalR[f_,x_]:=NestWhile[echoStep@*ReplaceAll[allRules],echoStep0[d[f,x]],!FreeQ[#2,_d|_dfunc]&&UnsameQ[##]&,2]
+stepD[f_,x_]:=With[{eval=dEval[f,x]},eval/;FreeQ[eval,_d|_dfunc]]
 
 
 End[]
