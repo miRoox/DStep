@@ -6,6 +6,21 @@ BeginPackage["DStep`"]
 Begin["`Private`"]
 
 
+d/:MakeBoxes[d[f_,x_],TraditionalForm]:=Module[{boxes},
+  boxes=MakeBoxes[f, TraditionalForm];
+  If[Precedence[Plus]>=Precedence[boxes,TraditionalForm],boxes=RowBox[{"(", boxes, ")"}]];
+  RowBox[{FractionBox["\[DifferentialD]", RowBox[{"\[DifferentialD]", MakeBoxes[x, TraditionalForm]}]], boxes}]
+]
+dfunc/:MakeBoxes[dfunc[f_, g_], TraditionalForm]:=Module[{fboxes, gboxes},
+  fboxes=ToBoxes[f[g], TraditionalForm]; gboxes=ToBoxes[g, TraditionalForm];
+  If[Precedence[Plus]>=Precedence[fboxes, TraditionalForm],fboxes=RowBox[{"(", fboxes, ")"}]];
+  If[Precedence[Plus]>=Precedence[gboxes, TraditionalForm],gboxes=RowBox[{"(", gboxes, ")"}]];
+  FractionBox[RowBox[{"\[DifferentialD]", fboxes}], RowBox[{"\[DifferentialD]", gboxes}]]
+]
+
+makeXForm[sym_Symbol]:=sym/:MakeBoxes[sym,TraditionalForm]=ToBoxes[Symbol[StringPart[ToString[sym,InputForm],1]],TraditionalForm]
+
+
 baseRules={
   d[c_,x_]/;FreeQ[c,x]:>0,
   d[lf_Plus,x_]:>Thread[d[lf,x],Plus],
@@ -21,6 +36,7 @@ higherRules={
 };
 
 substRules=dfunc[f_,g_]:>Module[{u},
+  makeXForm[u];
   With[{df=dEval[f[u],u]},
     (df/.{u->g})/;FreeQ[df,_d|_dfunc]
   ]
