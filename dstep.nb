@@ -4241,6 +4241,1188 @@ Notebook[
          ],
          "Input",
          CellLabel -> "In[29]:="
+        ],
+        Cell["\:63d0\:53d6\:6807\:6ce8", "Text"],
+        Cell[
+         BoxData[
+          {
+           RowBox[
+            {
+             RowBox[{"getLabels", "[", "expr_", "]"}],
+             ":=",
+             RowBox[
+              {
+               "With",
+               "[",
+               RowBox[
+                {
+                 RowBox[
+                  {
+                   "{",
+                   RowBox[
+                    {
+                     "lbs",
+                     "=",
+                     RowBox[
+                      {
+                       "DeleteDuplicates",
+                       "@",
+                       RowBox[
+                        {
+                         "Cases",
+                         "[",
+                         RowBox[
+                          {
+                           "expr",
+                           ",",
+                           RowBox[
+                            {
+                             RowBox[{"dLabeled", "[", RowBox[{"_", ",", "lb_"}], "]"}],
+                             "\[RuleDelayed]",
+                             "lb"
+                            }
+                           ],
+                           ",",
+                           RowBox[{"{", RowBox[{"0", ",", "Infinity"}], "}"}]
+                          }
+                         ],
+                         "]"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ],
+                   "}"
+                  }
+                 ],
+                 ",",
+                 RowBox[
+                  {
+                   RowBox[
+                    {
+                     "Row",
+                     "@",
+                     RowBox[
+                      {
+                       "Flatten",
+                       "@",
+                       RowBox[
+                        {
+                         "{",
+                         RowBox[
+                          {
+                           "\"(\"",
+                           ",",
+                           RowBox[
+                            {"Riffle", "[", RowBox[{"lbs", ",", "\"; \""}], "]"}
+                           ],
+                           ",",
+                           "\")\""
+                          }
+                         ],
+                         "}"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ],
+                   "/;",
+                   RowBox[{"lbs", "=!=", RowBox[{"{", "}"}]}]
+                  }
+                 ]
+                }
+               ],
+               "]"
+              }
+             ]
+            }
+           ],
+           "\n",
+           RowBox[
+            {
+             RowBox[{RowBox[{"getLabels", "[", "_", "]"}], "=", "\"\""}],
+             ";"
+            }
+           ]
+          }
+         ],
+         "Input",
+         CellLabel -> "In[31]:="
+        ],
+        Cell[
+         "\:79fb\:9664\:8868\:8fbe\:5f0f\:91cc\:7684\:6807\:6ce8",
+         "Text"
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            RowBox[{"removeLabels", "[", "expr_", "]"}],
+            ":=",
+            RowBox[
+             {
+              "expr",
+              "/.",
+              RowBox[
+               {
+                "{",
+                RowBox[
+                 {
+                  RowBox[{"dLabeled", "[", RowBox[{"e_", ",", "_"}], "]"}],
+                  "\[RuleDelayed]",
+                  "e"
+                 }
+                ],
+                "}"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[33]:="
+        ],
+        Cell["\:663e\:793a\:6807\:6ce8", "Text"],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            RowBox[{"echoStep0", "[", "expr_", "]"}],
+            ":=",
+            RowBox[
+             {
+              "(",
+              RowBox[
+               {
+                RowBox[
+                 {
+                  "CellPrint",
+                  "@",
+                  RowBox[
+                   {
+                    "Cell",
+                    "[",
+                    RowBox[
+                     {
+                      RowBox[
+                       {
+                        "BoxData",
+                        "[",
+                        RowBox[
+                         {
+                          "FormBox",
+                          "[",
+                          RowBox[
+                           {
+                            RowBox[
+                             {
+                              "ToBoxes",
+                              "[",
+                              RowBox[
+                               {
+                                RowBox[{"removeLabels", "@", "expr"}],
+                                ",",
+                                "TraditionalForm"
+                               }
+                              ],
+                              "]"
+                             }
+                            ],
+                            ",",
+                            "TraditionalForm"
+                           }
+                          ],
+                          "]"
+                         }
+                        ],
+                        "]"
+                       }
+                      ],
+                      ",",
+                      "\"Print\"",
+                      ",",
+                      RowBox[
+                       {
+                        "CellMargins",
+                        "\[Rule]",
+                        RowBox[
+                         {
+                          "{",
+                          RowBox[
+                           {
+                            RowBox[
+                             {
+                              "{",
+                              RowBox[
+                               {
+                                RowBox[
+                                 {
+                                  "Inherited",
+                                  "+",
+                                  RowBox[
+                                   {"20", RowBox[{"(", RowBox[{"$dDepth", "-", "1"}], ")"}]}
+                                  ]
+                                 }
+                                ],
+                                ",",
+                                "Inherited"
+                               }
+                              ],
+                              "}"
+                             }
+                            ],
+                            ",",
+                            RowBox[{"{", RowBox[{"Inherited", ",", "Inherited"}], "}"}]
+                           }
+                          ],
+                          "}"
+                         }
+                        ]
+                       }
+                      ],
+                      ",",
+                      RowBox[
+                       {
+                        "CellFrameLabels",
+                        "\[Rule]",
+                        RowBox[
+                         {
+                          "{",
+                          RowBox[
+                           {
+                            RowBox[
+                             {
+                              "{",
+                              RowBox[
+                               {
+                                "None",
+                                ",",
+                                RowBox[
+                                 {
+                                  "Cell",
+                                  "[",
+                                  RowBox[
+                                   {
+                                    RowBox[
+                                     {
+                                      "BoxData",
+                                      "@",
+                                      RowBox[
+                                       {"ToBoxes", "@", RowBox[{"getLabels", "[", "expr", "]"}]}
+                                      ]
+                                     }
+                                    ],
+                                    ",",
+                                    "\"MessageText\""
+                                   }
+                                  ],
+                                  "]"
+                                 }
+                                ]
+                               }
+                              ],
+                              "}"
+                             }
+                            ],
+                            ",",
+                            RowBox[{"{", RowBox[{"None", ",", "None"}], "}"}]
+                           }
+                          ],
+                          "}"
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ],
+                    "]"
+                   }
+                  ]
+                 }
+                ],
+                ";",
+                "\[IndentingNewLine]",
+                "expr"
+               }
+              ],
+              ")"
+             }
+            ]
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[34]:="
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            RowBox[{"echoStep", "[", "expr_", "]"}],
+            ":=",
+            RowBox[
+             {
+              "(",
+              RowBox[
+               {
+                RowBox[
+                 {
+                  "CellPrint",
+                  "@",
+                  RowBox[
+                   {
+                    "Cell",
+                    "[",
+                    RowBox[
+                     {
+                      RowBox[
+                       {
+                        "BoxData",
+                        "[",
+                        RowBox[
+                         {
+                          "FormBox",
+                          "[",
+                          RowBox[
+                           {
+                            RowBox[
+                             {
+                              "ToBoxes",
+                              "[",
+                              RowBox[
+                               {
+                                RowBox[{"removeLabels", "@", "expr"}],
+                                ",",
+                                "TraditionalForm"
+                               }
+                              ],
+                              "]"
+                             }
+                            ],
+                            ",",
+                            "TraditionalForm"
+                           }
+                          ],
+                          "]"
+                         }
+                        ],
+                        "]"
+                       }
+                      ],
+                      ",",
+                      "\"Print\"",
+                      ",",
+                      RowBox[
+                       {
+                        "CellDingbat",
+                        "\[Rule]",
+                        RowBox[
+                         {"Cell", "[", RowBox[{"\"=\"", ",", "\"EchoLabel\""}], "]"}
+                        ]
+                       }
+                      ],
+                      ",",
+                      RowBox[
+                       {
+                        "CellMargins",
+                        "\[Rule]",
+                        RowBox[
+                         {
+                          "{",
+                          RowBox[
+                           {
+                            RowBox[
+                             {
+                              "{",
+                              RowBox[
+                               {
+                                RowBox[{"Inherited", "+", RowBox[{"20", "$dDepth"}]}],
+                                ",",
+                                "Inherited"
+                               }
+                              ],
+                              "}"
+                             }
+                            ],
+                            ",",
+                            RowBox[{"{", RowBox[{"Inherited", ",", "Inherited"}], "}"}]
+                           }
+                          ],
+                          "}"
+                         }
+                        ]
+                       }
+                      ],
+                      ",",
+                      RowBox[
+                       {
+                        "CellFrameLabels",
+                        "\[Rule]",
+                        RowBox[
+                         {
+                          "{",
+                          RowBox[
+                           {
+                            RowBox[
+                             {
+                              "{",
+                              RowBox[
+                               {
+                                "None",
+                                ",",
+                                RowBox[
+                                 {
+                                  "Cell",
+                                  "[",
+                                  RowBox[
+                                   {
+                                    RowBox[
+                                     {
+                                      "BoxData",
+                                      "@",
+                                      RowBox[
+                                       {"ToBoxes", "@", RowBox[{"getLabels", "[", "expr", "]"}]}
+                                      ]
+                                     }
+                                    ],
+                                    ",",
+                                    "\"MessageText\""
+                                   }
+                                  ],
+                                  "]"
+                                 }
+                                ]
+                               }
+                              ],
+                              "}"
+                             }
+                            ],
+                            ",",
+                            RowBox[{"{", RowBox[{"None", ",", "None"}], "}"}]
+                           }
+                          ],
+                          "}"
+                         }
+                        ]
+                       }
+                      ]
+                     }
+                    ],
+                    "]"
+                   }
+                  ]
+                 }
+                ],
+                ";",
+                "\[IndentingNewLine]",
+                "expr"
+               }
+              ],
+              ")"
+             }
+            ]
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[35]:="
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            RowBox[{"dEvalR", "[", RowBox[{"f_", ",", "x_"}], "]"}],
+            ":=",
+            RowBox[
+             {
+              "NestWhile",
+              "[",
+              RowBox[
+               {
+                RowBox[
+                 {
+                  "removeLabels",
+                  "@*",
+                  "echoStep",
+                  "@*",
+                  RowBox[{"ReplaceAll", "[", "allRules", "]"}]
+                 }
+                ],
+                ",",
+                RowBox[
+                 {
+                  "removeLabels",
+                  "@",
+                  RowBox[
+                   {
+                    "echoStep0",
+                    "[",
+                    RowBox[{"d", "[", RowBox[{"f", ",", "x"}], "]"}],
+                    "]"
+                   }
+                  ]
+                 }
+                ],
+                ",",
+                RowBox[
+                 {
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "!",
+                      RowBox[
+                       {
+                        "FreeQ",
+                        "[",
+                        RowBox[{"#2", ",", RowBox[{"_d", "|", "_dfunc"}]}],
+                        "]"
+                       }
+                      ]
+                     }
+                    ],
+                    "&&",
+                    RowBox[{"UnsameQ", "[", "##", "]"}]
+                   }
+                  ],
+                  "&"
+                 }
+                ],
+                ",",
+                "2"
+               }
+              ],
+              "]"
+             }
+            ]
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[36]:="
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               RowBox[
+                {
+                 RowBox[{"(", RowBox[{"stepD", "\[Equal]", "D"}], ")"}],
+                 "[",
+                 RowBox[
+                  {
+                   RowBox[
+                    {
+                     "Log",
+                     "[",
+                     RowBox[
+                      {
+                       "Sec",
+                       "[",
+                       RowBox[{RowBox[{"3", "^", "x"}], "-", "1"}],
+                       "]"
+                      }
+                     ],
+                     "]"
+                    }
+                   ],
+                   ",",
+                   "x"
+                  }
+                 ],
+                 "]"
+                }
+               ],
+               "//",
+               "Through"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[37]:="
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    FractionBox[
+                     "\[DifferentialD]",
+                     RowBox[{"\[DifferentialD]", "x"}]
+                    ],
+                    RowBox[
+                     {
+                      "log",
+                      "(",
+                      RowBox[
+                       {
+                        "sec",
+                        "(",
+                        RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                        ")"
+                       }
+                      ],
+                      ")"
+                     }
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {None, Cell[BoxData["\"\""], "MessageText"]},
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "(",
+                      RowBox[
+                       {
+                        FractionBox[
+                         "\[DifferentialD]",
+                         RowBox[{"\[DifferentialD]", "x"}]
+                        ],
+                        RowBox[
+                         {
+                          "sec",
+                          "(",
+                          RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                          ")"
+                         }
+                        ]
+                       }
+                      ],
+                      ")"
+                     }
+                    ],
+                    " ",
+                    FractionBox[
+                     RowBox[
+                      {
+                       "\[DifferentialD]",
+                       FormBox[
+                        RowBox[
+                         {
+                          "log",
+                          "(",
+                          RowBox[
+                           {
+                            "sec",
+                            "(",
+                            RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                            ")"
+                           }
+                          ],
+                          ")"
+                         }
+                        ],
+                        TraditionalForm
+                       ]
+                      }
+                     ],
+                     RowBox[
+                      {
+                       "\[DifferentialD]",
+                       FormBox[
+                        RowBox[
+                         {
+                          "sec",
+                          "(",
+                          RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                          ")"
+                         }
+                        ],
+                        TraditionalForm
+                       ]
+                      }
+                     ]
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {
+                 None,
+                 Cell[
+                  BoxData[
+                   TemplateBox[
+                    {"\"(\"", "\"Chain Rule\"", "\")\""},
+                    "RowDefault"
+                   ]
+                  ],
+                  "MessageText"
+                 ]
+                },
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    FractionBox[
+                     "\[DifferentialD]",
+                     RowBox[{"\[DifferentialD]", FormBox["u", TraditionalForm]}]
+                    ],
+                    RowBox[{"log", "(", FormBox["u", TraditionalForm], ")"}]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {
+                 None,
+                 Cell[
+                  BoxData[
+                   TemplateBox[
+                    {
+                     "\"(\"",
+                     TemplateBox[
+                      {
+                       "\"where \"",
+                       TagBox[
+                        FormBox[
+                         RowBox[
+                          {
+                           FormBox["u", TraditionalForm],
+                           "\[LongEqual]",
+                           RowBox[
+                            {
+                             "sec",
+                             "(",
+                             RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                             ")"
+                            }
+                           ]
+                          }
+                         ],
+                         TraditionalForm
+                        ],
+                        TraditionalForm,
+                        Editable -> True
+                       ]
+                      },
+                      "RowDefault"
+                     ],
+                     "\")\""
+                    },
+                    "RowDefault"
+                   ]
+                  ],
+                  "MessageText"
+                 ]
+                },
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  FractionBox["1", FormBox["u", TraditionalForm]],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{40 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {None, Cell[BoxData["\"\""], "MessageText"]},
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "(",
+                      RowBox[
+                       {
+                        FractionBox[
+                         "\[DifferentialD]",
+                         RowBox[{"\[DifferentialD]", "x"}]
+                        ],
+                        RowBox[
+                         {"(", RowBox[{"1", "-", SuperscriptBox["3", "x"]}], ")"}
+                        ]
+                       }
+                      ],
+                      ")"
+                     }
+                    ],
+                    " ",
+                    RowBox[
+                     {
+                      "cos",
+                      "(",
+                      RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                      ")"
+                     }
+                    ],
+                    " ",
+                    FractionBox[
+                     RowBox[
+                      {
+                       "\[DifferentialD]",
+                       FormBox[
+                        RowBox[
+                         {
+                          "sec",
+                          "(",
+                          RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                          ")"
+                         }
+                        ],
+                        TraditionalForm
+                       ]
+                      }
+                     ],
+                     RowBox[
+                      {
+                       "\[DifferentialD]",
+                       RowBox[
+                        {
+                         "(",
+                         FormBox[
+                          RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                          TraditionalForm
+                         ],
+                         ")"
+                        }
+                       ]
+                      }
+                     ]
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {
+                 None,
+                 Cell[
+                  BoxData[
+                   TemplateBox[
+                    {"\"(\"", "\"Chain Rule\"", "\")\""},
+                    "RowDefault"
+                   ]
+                  ],
+                  "MessageText"
+                 ]
+                },
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    FractionBox[
+                     "\[DifferentialD]",
+                     RowBox[{"\[DifferentialD]", FormBox["u", TraditionalForm]}]
+                    ],
+                    RowBox[{"sec", "(", FormBox["u", TraditionalForm], ")"}]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {
+                 None,
+                 Cell[
+                  BoxData[
+                   TemplateBox[
+                    {
+                     "\"(\"",
+                     TemplateBox[
+                      {
+                       "\"where \"",
+                       TagBox[
+                        FormBox[
+                         RowBox[
+                          {
+                           FormBox["u", TraditionalForm],
+                           "\[LongEqual]",
+                           RowBox[{"1", "-", SuperscriptBox["3", "x"]}]
+                          }
+                         ],
+                         TraditionalForm
+                        ],
+                        TraditionalForm,
+                        Editable -> True
+                       ]
+                      },
+                      "RowDefault"
+                     ],
+                     "\")\""
+                    },
+                    "RowDefault"
+                   ]
+                  ],
+                  "MessageText"
+                 ]
+                },
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[{"tan", "(", FormBox["u", TraditionalForm], ")"}],
+                    " ",
+                    RowBox[{"sec", "(", FormBox["u", TraditionalForm], ")"}]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{40 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {None, Cell[BoxData["\"\""], "MessageText"]},
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "(",
+                      RowBox[
+                       {
+                        RowBox[
+                         {
+                          FractionBox[
+                           "\[DifferentialD]",
+                           RowBox[{"\[DifferentialD]", "x"}]
+                          ],
+                          "1"
+                         }
+                        ],
+                        "+",
+                        RowBox[
+                         {
+                          FractionBox[
+                           "\[DifferentialD]",
+                           RowBox[{"\[DifferentialD]", "x"}]
+                          ],
+                          RowBox[{"-", SuperscriptBox["3", "x"]}]
+                         }
+                        ]
+                       }
+                      ],
+                      ")"
+                     }
+                    ],
+                    " ",
+                    RowBox[
+                     {
+                      "tan",
+                      "(",
+                      RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                      ")"
+                     }
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {
+                 None,
+                 Cell[
+                  BoxData[
+                   TemplateBox[
+                    {"\"(\"", "\"Linearity Rule\"", "\")\""},
+                    "RowDefault"
+                   ]
+                  ],
+                  "MessageText"
+                 ]
+                },
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[
+                     {
+                      "-",
+                      RowBox[
+                       {
+                        "(",
+                        RowBox[
+                         {
+                          FractionBox[
+                           "\[DifferentialD]",
+                           RowBox[{"\[DifferentialD]", "x"}]
+                          ],
+                          SuperscriptBox["3", "x"]
+                         }
+                        ],
+                        ")"
+                       }
+                      ]
+                     }
+                    ],
+                    " ",
+                    RowBox[
+                     {
+                      "tan",
+                      "(",
+                      RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                      ")"
+                     }
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {
+                 None,
+                 Cell[
+                  BoxData[
+                   TemplateBox[
+                    {
+                     "\"(\"",
+                     "\"Constant Rule\"",
+                     "\"; \"",
+                     "\"Linearity Rule\"",
+                     "\")\""
+                    },
+                    "RowDefault"
+                   ]
+                  ],
+                  "MessageText"
+                 ]
+                },
+                {None, None}
+               }
+              ],
+              Cell[
+               BoxData[
+                FormBox[
+                 FormBox[
+                  RowBox[
+                   {
+                    RowBox[{"-", SuperscriptBox["3", "x"]}],
+                    " ",
+                    RowBox[{"log", "(", "3", ")"}],
+                    " ",
+                    RowBox[
+                     {
+                      "tan",
+                      "(",
+                      RowBox[{"1", "-", SuperscriptBox["3", "x"]}],
+                      ")"
+                     }
+                    ]
+                   }
+                  ],
+                  TraditionalForm
+                 ],
+                 TraditionalForm
+                ]
+               ],
+               "Print",
+               CellDingbat -> Cell["=", "EchoLabel"],
+               CellMargins -> {{20 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellFrameLabels -> {
+                {None, Cell[BoxData["\"\""], "MessageText"]},
+                {None, None}
+               }
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[BoxData["True"], "Output", CellLabel -> "Out[37]="]
+          },
+          Open
+         ]
         ]
        },
        Open
