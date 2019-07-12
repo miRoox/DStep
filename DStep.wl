@@ -45,6 +45,15 @@ transferRules={
   HoldPattern@d[IgnoringInactive@Log[f_,g_],x_]:>d[Log[g]/Log[f],x]
 };
 
+allRules=Flatten@{
+  transferRules,
+  baseRules,
+  functionRules,
+  functionExtRules,
+  substRules,
+  higherRules
+};
+
 
 dEval[f_,x_]:=d[f,x]//.allRules
 
