@@ -11,11 +11,6 @@ Notebook[
       CellGroupData[
        {
         Cell["\:6c42\:5bfc\:89c4\:5219", "Section"],
-        Cell[
-         BoxData[RowBox[{"ClearAll", "[", "\"`*\"", "]"}]],
-         "Input",
-         CellLabel -> "In[1]:="
-        ],
         Cell["\:57fa\:672c\:89c4\:5219", "Text"],
         Cell[
          BoxData[
@@ -141,7 +136,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[2]:="
+         CellLabel -> "In[1]:="
         ],
         Cell[
          "\:9ad8\:9636\:89c4\:5219\:ff08\:53cd\:51fd\:6570/\:590d\:5408\:51fd\:6570\:ff09",
@@ -363,7 +358,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[3]:="
+         CellLabel -> "In[2]:="
         ],
         Cell["\:66ff\:6362\:89c4\:5219", "Text"],
         Cell[
@@ -400,8 +395,7 @@ Notebook[
            }
           ]
          ],
-         "Input",
-         CellLabel -> "In[4]:="
+         "Input"
         ],
         Cell[
          BoxData[
@@ -450,8 +444,7 @@ Notebook[
            }
           ]
          ],
-         "Input",
-         CellLabel -> "In[5]:="
+         "Input"
         ],
         Cell[
          BoxData[
@@ -501,7 +494,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[4]:="
+         CellLabel -> "In[3]:="
         ],
         Cell["\:51fd\:6570\:89c4\:5219", "Text"],
         Cell[
@@ -672,8 +665,7 @@ Notebook[
            }
           ]
          ],
-         "Input",
-         CellLabel -> "In[7]:="
+         "Input"
         ],
         Cell[
          BoxData[
@@ -851,7 +843,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[5]:="
+         CellLabel -> "In[4]:="
         ],
         Cell[
          BoxData[
@@ -1012,7 +1004,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[6]:="
+         CellLabel -> "In[5]:="
         ],
         Cell["\:53d8\:5f62\:89c4\:5219", "Text"],
         Cell[
@@ -1166,7 +1158,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[7]:="
+         CellLabel -> "In[6]:="
         ],
         Cell["\:6574\:5408\:5168\:90e8\:89c4\:5219", "Text"],
         Cell[
@@ -1218,7 +1210,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[13]:="
+         CellLabel -> "In[12]:="
         ],
         Cell[
          BoxData[
@@ -1237,7 +1229,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[9]:="
+         CellLabel -> "In[8]:="
         ],
         Cell["\:6d4b\:8bd5", "Text"],
         Cell[
@@ -1326,9 +1318,9 @@ Notebook[
              ]
             ],
             "Input",
-            CellLabel -> "In[10]:="
+            CellLabel -> "In[9]:="
            ],
-           Cell[BoxData["True"], "Output", CellLabel -> "Out[10]="]
+           Cell[BoxData["True"], "Output", CellLabel -> "Out[9]="]
           },
           Open
          ]
@@ -1360,7 +1352,7 @@ Notebook[
              ]
             ],
             "Input",
-            CellLabel -> "In[11]:="
+            CellLabel -> "In[10]:="
            ],
            Cell[
             BoxData[
@@ -1390,7 +1382,7 @@ Notebook[
              ]
             ],
             "Output",
-            CellLabel -> "Out[11]="
+            CellLabel -> "Out[10]="
            ]
           },
           Open
@@ -1489,7 +1481,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[12]:="
+         CellLabel -> "In[11]:="
         ],
         Cell[
          CellGroupData[
@@ -1518,7 +1510,7 @@ Notebook[
              ]
             ],
             "Input",
-            CellLabel -> "In[14]:="
+            CellLabel -> "In[13]:="
            ],
            Cell[
             BoxData[
@@ -1542,7 +1534,7 @@ Notebook[
              ]
             ],
             "Output",
-            CellLabel -> "Out[14]="
+            CellLabel -> "Out[13]="
            ]
           },
           Open
@@ -1644,7 +1636,8 @@ Notebook[
            }
           ]
          ],
-         "Input"
+         "Input",
+         CellLabel -> ""
         ],
         Cell["\:7b49\:5f0f\:8d77\:70b9\:548c\:8fb9\:8ddd", "Text"],
         Cell[
@@ -1856,7 +1849,7 @@ Notebook[
         Cell[
          BoxData[RowBox[{RowBox[{"$dDepth", "=", "0"}], ";"}]],
          "Input",
-         CellLabel -> "In[15]:="
+         CellLabel -> "In[14]:="
         ],
         Cell[
          BoxData[
@@ -1971,7 +1964,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[16]:="
+         CellLabel -> "In[15]:="
         ],
         Cell[
          BoxData[
@@ -2087,7 +2080,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[17]:="
+         CellLabel -> "In[16]:="
         ],
         Cell["\:8ba1\:7b97\:90e8\:5206", "Text"],
         Cell[
@@ -2120,7 +2113,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[18]:="
+         CellLabel -> "In[17]:="
         ],
         Cell[
          BoxData[
@@ -2186,7 +2179,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[19]:="
+         CellLabel -> "In[18]:="
         ],
         Cell[
          BoxData[
@@ -2237,7 +2230,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[20]:="
+         CellLabel -> "In[19]:="
         ],
         Cell["\:6d4b\:8bd5", "Text"],
         Cell[
@@ -2281,7 +2274,7 @@ Notebook[
              ]
             ],
             "Input",
-            CellLabel -> "In[21]:="
+            CellLabel -> "In[20]:="
            ],
            Cell[
             CellGroupData[
@@ -2395,7 +2388,7 @@ Notebook[
                     "d",
                     "(",
                     RowBox[
-                     {RowBox[{"log", "(", "u$13458", ")"}], ",", "u$13458"}
+                     {RowBox[{"log", "(", "u$3910", ")"}], ",", "u$3910"}
                     ],
                     ")"
                    }
@@ -2411,7 +2404,7 @@ Notebook[
               Cell[
                BoxData[
                 FormBox[
-                 FormBox[FractionBox["1", "u$13458"], TraditionalForm],
+                 FormBox[FractionBox["1", "u$3910"], TraditionalForm],
                  TraditionalForm
                 ]
                ],
@@ -2475,7 +2468,7 @@ Notebook[
                     "d",
                     "(",
                     RowBox[
-                     {RowBox[{"sec", "(", "u$13470", ")"}], ",", "u$13470"}
+                     {RowBox[{"sec", "(", "u$3922", ")"}], ",", "u$3922"}
                     ],
                     ")"
                    }
@@ -2494,9 +2487,9 @@ Notebook[
                  FormBox[
                   RowBox[
                    {
-                    RowBox[{"tan", "(", "u$13470", ")"}],
+                    RowBox[{"tan", "(", "u$3922", ")"}],
                     " ",
-                    RowBox[{"sec", "(", "u$13470", ")"}]
+                    RowBox[{"sec", "(", "u$3922", ")"}]
                    }
                   ],
                   TraditionalForm
@@ -2632,7 +2625,7 @@ Notebook[
              Open
             ]
            ],
-           Cell[BoxData["True"], "Output", CellLabel -> "Out[21]="]
+           Cell[BoxData["True"], "Output", CellLabel -> "Out[20]="]
           },
           Open
          ]
@@ -2818,7 +2811,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[17]:="
+         CellLabel -> "In[21]:="
         ],
         Cell[
          BoxData[
@@ -3040,7 +3033,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[18]:="
+         CellLabel -> "In[22]:="
         ],
         Cell[
          BoxData[
@@ -3103,7 +3096,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[19]:="
+         CellLabel -> "In[23]:="
         ],
         Cell[
          BoxData[
@@ -3127,72 +3120,66 @@ Notebook[
                     ",",
                     RowBox[
                      {
-                      "With",
-                      "[",
+                      RowBox[{"makeXForm", "[", "u", "]"}],
+                      ";",
                       RowBox[
                        {
+                        "With",
+                        "[",
                         RowBox[
                          {
-                          "{",
                           RowBox[
                            {
-                            "df",
-                            "=",
+                            "{",
+                            RowBox[
+                             {
+                              "df",
+                              "=",
+                              RowBox[
+                               {
+                                "dEval",
+                                "[",
+                                RowBox[{RowBox[{"f", "[", "u", "]"}], ",", "u"}],
+                                "]"
+                               }
+                              ]
+                             }
+                            ],
+                            "}"
+                           }
+                          ],
+                          ",",
+                          RowBox[
+                           {
                             RowBox[
                              {
                               "(",
                               RowBox[
                                {
-                                RowBox[{"makeXForm", "[", "u", "]"}],
-                                ";",
-                                RowBox[
-                                 {
-                                  "dEval",
-                                  "[",
-                                  RowBox[{RowBox[{"f", "[", "u", "]"}], ",", "u"}],
-                                  "]"
-                                 }
-                                ]
+                                "df",
+                                "/.",
+                                RowBox[{"{", RowBox[{"u", "\[Rule]", "g"}], "}"}]
                                }
                               ],
                               ")"
                              }
-                            ]
-                           }
-                          ],
-                          "}"
-                         }
-                        ],
-                        ",",
-                        RowBox[
-                         {
-                          RowBox[
-                           {
-                            "(",
+                            ],
+                            "/;",
                             RowBox[
                              {
-                              "df",
-                              "/.",
-                              RowBox[{"{", RowBox[{"u", "\[Rule]", "g"}], "}"}]
+                              "FreeQ",
+                              "[",
+                              RowBox[{"df", ",", RowBox[{"_d", "|", "_dfunc"}]}],
+                              "]"
                              }
-                            ],
-                            ")"
-                           }
-                          ],
-                          "/;",
-                          RowBox[
-                           {
-                            "FreeQ",
-                            "[",
-                            RowBox[{"df", ",", RowBox[{"_d", "|", "_dfunc"}]}],
-                            "]"
+                            ]
                            }
                           ]
                          }
-                        ]
+                        ],
+                        "]"
                        }
-                      ],
-                      "]"
+                      ]
                      }
                     ]
                    }
@@ -3209,7 +3196,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[20]:="
+         CellLabel -> "In[24]:="
         ],
         Cell[
          CellGroupData[
@@ -3252,7 +3239,7 @@ Notebook[
              ]
             ],
             "Input",
-            CellLabel -> "In[22]:="
+            CellLabel -> "In[26]:="
            ],
            Cell[
             CellGroupData[
@@ -3660,7 +3647,7 @@ Notebook[
              Open
             ]
            ],
-           Cell[BoxData["True"], "Output", CellLabel -> "Out[22]="]
+           Cell[BoxData["True"], "Output", CellLabel -> "Out[26]="]
           },
           Open
          ]
@@ -3673,6 +3660,7 @@ Notebook[
       CellGroupData[
        {
         Cell["\:6807\:6ce8\:6b65\:9aa4", "Section"],
+        Cell["\:6807\:6ce8\:89c4\:5219", "Text"],
         Cell[
          BoxData[
           RowBox[
@@ -3835,7 +3823,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[17]:="
+         CellLabel -> "In[27]:="
         ],
         Cell[
          BoxData[
@@ -3946,7 +3934,7 @@ Notebook[
                         RowBox[
                          {
                           RowBox[{"dfunc", "[", RowBox[{"f", ",", "g"}], "]"}],
-                          "\[Times]",
+                          " ",
                           RowBox[{"d", "[", RowBox[{"g", ",", "x"}], "]"}]
                          }
                         ],
@@ -4014,7 +4002,7 @@ Notebook[
                             "]"
                            }
                           ],
-                          "\[Times]",
+                          " ",
                           RowBox[{"d", "[", RowBox[{"g", ",", "x"}], "]"}]
                          }
                         ],
@@ -4082,7 +4070,7 @@ Notebook[
                             "]"
                            }
                           ],
-                          "\[Times]",
+                          " ",
                           RowBox[{"d", "[", RowBox[{"g", ",", "x"}], "]"}]
                          }
                         ],
@@ -4108,7 +4096,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[18]:="
+         CellLabel -> "In[28]:="
         ],
         Cell[
          BoxData[
@@ -4132,104 +4120,110 @@ Notebook[
                     ",",
                     RowBox[
                      {
-                      "With",
-                      "[",
+                      RowBox[{"makeXForm", "[", "u", "]"}],
+                      ";",
                       RowBox[
                        {
+                        "With",
+                        "[",
                         RowBox[
                          {
-                          "{",
                           RowBox[
                            {
-                            "df",
-                            "=",
+                            "{",
                             RowBox[
                              {
-                              "dEval",
-                              "[",
+                              "df",
+                              "=",
                               RowBox[
                                {
+                                "dEval",
+                                "[",
                                 RowBox[
                                  {
-                                  "dLabeled",
-                                  "[",
                                   RowBox[
                                    {
-                                    RowBox[{"f", "[", "u", "]"}],
-                                    ",",
+                                    "dLabeled",
+                                    "[",
                                     RowBox[
                                      {
-                                      "Row",
-                                      "@",
+                                      RowBox[{"f", "[", "u", "]"}],
+                                      ",",
                                       RowBox[
                                        {
-                                        "{",
+                                        "Row",
+                                        "@",
                                         RowBox[
                                          {
-                                          "\"where \"",
-                                          ",",
+                                          "{",
                                           RowBox[
                                            {
-                                            "TraditionalForm",
-                                            "[",
-                                            RowBox[{"u", "\[Equal]", "g"}],
-                                            "]"
+                                            "\"where \"",
+                                            ",",
+                                            RowBox[
+                                             {
+                                              "TraditionalForm",
+                                              "[",
+                                              RowBox[{"u", "\[Equal]", "g"}],
+                                              "]"
+                                             }
+                                            ]
                                            }
-                                          ]
+                                          ],
+                                          "}"
                                          }
-                                        ],
-                                        "}"
+                                        ]
                                        }
                                       ]
                                      }
-                                    ]
+                                    ],
+                                    "]"
                                    }
                                   ],
-                                  "]"
+                                  ",",
+                                  "u"
                                  }
                                 ],
-                                ",",
-                                "u"
+                                "]"
+                               }
+                              ]
+                             }
+                            ],
+                            "}"
+                           }
+                          ],
+                          ",",
+                          RowBox[
+                           {
+                            RowBox[
+                             {
+                              "(",
+                              RowBox[
+                               {
+                                "df",
+                                "/.",
+                                RowBox[{"{", RowBox[{"u", "\[Rule]", "g"}], "}"}]
                                }
                               ],
+                              ")"
+                             }
+                            ],
+                            "/;",
+                            RowBox[
+                             {
+                              "FreeQ",
+                              "[",
+                              RowBox[{"df", ",", RowBox[{"_d", "|", "_dfunc"}]}],
                               "]"
                              }
                             ]
                            }
-                          ],
-                          "}"
-                         }
-                        ],
-                        ",",
-                        RowBox[
-                         {
-                          RowBox[
-                           {
-                            "(",
-                            RowBox[
-                             {
-                              "df",
-                              "/.",
-                              RowBox[{"{", RowBox[{"u", "\[Rule]", "g"}], "}"}]
-                             }
-                            ],
-                            ")"
-                           }
-                          ],
-                          "/;",
-                          RowBox[
-                           {
-                            "FreeQ",
-                            "[",
-                            RowBox[{"df", ",", RowBox[{"_d", "|", "_dfunc"}]}],
-                            "]"
-                           }
                           ]
                          }
-                        ]
+                        ],
+                        "]"
                        }
-                      ],
-                      "]"
+                      ]
                      }
                     ]
                    }
@@ -4245,7 +4239,8 @@ Notebook[
            }
           ]
          ],
-         "Input"
+         "Input",
+         CellLabel -> "In[29]:="
         ]
        },
        Open
