@@ -20,7 +20,11 @@ higherRules={
   d[f_[c_,g_],x_]/;FreeQ[c,x]&&g=!=x:>dfunc[f[c,#]&,g]d[g,x]
 };
 
-substRules=dfunc[f_,g_]:>Module[{u},dEval[f[u],u]/.{u->g}];
+substRules=dfunc[f_,g_]:>Module[{u},
+  With[{df=dEval[f[u],u]},
+    (df/.{u->g})/;FreeQ[df,_d|_dfunc]
+  ]
+];
 
 functionRules=Table[
   With[{f=f},HoldPattern@d[IgnoringInactive@f[x_],x_]]->D[f[x],x],
