@@ -18,7 +18,7 @@ dfunc/:MakeBoxes[dfunc[f_, g_], TraditionalForm]:=Module[{fboxes, gboxes},
   FractionBox[RowBox[{"\[DifferentialD]", fboxes}], RowBox[{"\[DifferentialD]", gboxes}]]
 ]
 
-makeXForm[sym_Symbol]:=sym/:MakeBoxes[sym,TraditionalForm]=ToBoxes[Symbol[StringPart[ToString[sym,InputForm],1]],TraditionalForm]
+makeXForm[sym_Symbol]:=sym/:MakeBoxes[sym,TraditionalForm]=ToBoxes[Symbol[StringPart[SymbolName[sym],1]],TraditionalForm]
 
 
 baseRules={
